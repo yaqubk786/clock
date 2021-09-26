@@ -1,5 +1,5 @@
 .parent{
-    background-color:darkblue;
+    background-color: rgb(50, 50, 122);
     width: 100%;
     height: 100vh;
     position: relative;
@@ -9,6 +9,7 @@
     width: 100px;
     margin-left: 80px;
     margin-top: 81px;
+    border-radius: 50%;
 }
 #c{
     font-weight: bold;
@@ -17,6 +18,7 @@
     margin-top: 103px;
     color: white;
     font-style: italic;
+    margin-left: 11px;
 }
 #div1{
     height: 100px;
@@ -202,6 +204,9 @@ select{
     margin-top: -200px ;
     margin-right: 140px;
     border-radius: 10px;
+    background-color: brown;
+    background-size: 100%;
+    background-position: center;
 
 }
 #div3{
@@ -213,6 +218,7 @@ select{
     border-radius: 10px;
     background-color: darkslateblue;
     font-weight: bold;
+    font-size: 30px;
     color: white;
     box-sizing: border-box;
     padding-top: 25px;
