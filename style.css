@@ -207,6 +207,11 @@ select{
     background-color: brown;
     background-size: 100%;
     background-position: center;
+    color: white;
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: 2px 2px 5px red;
+    
 
 }
 #div3{
@@ -235,7 +240,7 @@ select{
     box-sizing: border-box;
     text-align: center;
     color: white;
-    padding-top: 10px;
+    padding-top: 5px;
     background-image:linear-gradient(
         113deg, #6E54EC 0%, #CB52F8 40%, #FC5EFF 81%, #F1A7C5 100%);
 }

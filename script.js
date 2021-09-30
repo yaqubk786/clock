@@ -24,7 +24,7 @@ minTime.innerHTML=`${addZero(mint)}`;
 secTime.innerHTML=`${addZero(sect)}`;
 ampm.innerHTML =    `${hrt >= 12 ? 'PM' : 'AM'}`;
 
-hrTime=addZero(hrTime);
+// hrTime=addZero(hrTime);
 
 }
 
@@ -32,8 +32,9 @@ hrTime=addZero(hrTime);
 setInterval(currentTime, 1000);
 
 const bgimage= document.querySelector("#lunch");
-
 const good= document.querySelector("#div3");
+
+
 
 function noonAfter(){
 
@@ -53,36 +54,99 @@ function nightFun(){
     bgimage.style.backgroundImage = "url('./night.jpeg')";
 }
 
-const d= new Date();
+let d= new Date();
 
-var hrt= d.getHours();
+let hrt= d.getHours();
 
-function realTimeFun(){
+function chillKaro(){
+    good.innerText ="keep calm !!";
+      bgimage.style.backgroundImage = "url('./constant.jpg')";
+    }
+    chillKaro();
 
-    if(hrt>=5 && hrt<12){  
+
+    //time slot - morning
+const morningSlot = document.querySelector('.day-slot');
+
+
+
+morningSlot.addEventListener("change", function (){ 
+
+
+  console.log(hrt);
+  console.log(this.value);
+
+  if (this.value==hrt) {     
+      morning();}
+
+   else{
+   chillKaro();
+   }
+});
+
+
+//time slot - noon
+const noonSlot = document.querySelector('.noon-slot');
+noonSlot.addEventListener("change", function (){
+  if (this.value==hrt) {     
+   noonAfter();}
+
+ else{
+ chillKaro();
+ }
+
+});
+
+//time slot-night
+const nightSlot = document.querySelector('.night-slot');
+
+nightSlot.addEventListener("change", function (){
+  if (this.value==hrt) {    
+    nightFun();}
+
+ else{
+ chillKaro();
+ }
+});
+
+
+// function realTimeFun(){
+
+//     if(hrt>=5 && hrt<12){  
     
-      morning();
+//       morning();
     
-      }else if(hrt>=12 && hrt<18){
+//       }else if(hrt>=12 && hrt<18){
       
-        noonAfter();
+//         noonAfter();
     
-      }else if(hrt>=18 && hrt<24){
+//       }else if(hrt>=18 && hrt<24){
       
-           nightFun();
+//            nightFun();
        
-      }else{
+//       }else{
         
      
-          good.innerText ="Chill Karo";
-          bgimage.style.backgroundImage = "url('./chillout.jpg')";
+//           good.innerText ="Chill Karo";
+//           bgimage.style.backgroundImage = "url('./chillout.jpg')";
     
-      }
-    };
-    realTimeFun()
+//       }
+//     };
+//     realTimeFun()
+let isParty = false;
 
+function party()
+{
+    if (!isParty) {
+        partybutton.innerText="End Party"
+        good.innerText ="IT'S PARTY TIME";
+        bgimage.style.backgroundImage = "url('party-dance.gif')";
+    } else {
+        chillKaro();
+        partybutton.innerText="lets party"
+    } isParty=!isParty;
+}
 
-
-
+const partybutton=document.getElementById("div4")
 
 
